@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../context/auth.context";
 
 
 
@@ -46,6 +46,7 @@ function CreateAdventure(props) {
 
   const adventure = {
     name: name,
+    image: image,
     franchise: franchise,
     date: date,
     platforms: platforms,
@@ -58,15 +59,15 @@ function CreateAdventure(props) {
   //  userId: user._id,
   };
 
-  const createNewEvent = (e) => {
+  const createNewAdventure = (e) => {
     e.preventDefault();
 
-    const url = process.env.REACT_APP_URL + "/api/adventures";
+
 
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(url, adventure, {
+      .post(`${process.env.REACT_APP_URL}/adventures`, adventure, {
         headers: {
           Authorization: `Bearer ${storedToken}`,
         },
@@ -99,7 +100,7 @@ function CreateAdventure(props) {
         <input
           type="text"
           value={name}
-          required
+          required={true}
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -164,11 +165,7 @@ function CreateAdventure(props) {
           <option value="false">Not Played</option>
         </select>
         <div className="form-buttons">
-          <ButtonLink
-            classProp="btn-link-dark"
-            url={props.cancelUrl}
-            text="Cancel"
-          />
+      
           <button className="form-submit-btn" type="submit">
             Add Adventure
           </button>
