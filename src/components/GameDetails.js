@@ -42,11 +42,15 @@ function GameDetails(props) {
             <article>
                 <div>
                     <img src={props.image}/>
+                
                 </div>   
                     <div>
                         <h3>Description</h3>
                     </div>
-                    {props.description}      
+                    {props.description}  
+
+                   <h3>{props.franchise}</h3> 
+                   <h3>{props.first_release_date}</h3>    
             </article>
             <footer>
                 <button  onClick={props.onClose}>Close</button>
@@ -59,6 +63,7 @@ name={props.name}
 franchise={props.franchise}
 id={props.id}
 description={props.description}
+releaseDate={props.releaseDate}
 />
  
               </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDisclosure } from '@chakra-ui/react'
 import GameDetails from './GameDetails'
-import AddGameFromAPI from './AddGameFromAPI'
+
 
 
 const Game = (props) => {
@@ -44,6 +44,8 @@ const Game = (props) => {
                     name={props.name}
                     id={props.id}
                     description={props.description}
+                    franchise={props.franchise}
+                    releaseDate={props.releaseDate}
                 />
         
 

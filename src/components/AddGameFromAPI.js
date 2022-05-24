@@ -1,10 +1,10 @@
 
 import { useState, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 
-import EditAdventure from "../pages/EditAdventure";
+
 
 function AddGameFromAPI(props) {
   let myAdventure = {};
@@ -50,11 +50,11 @@ function AddGameFromAPI(props) {
     date: date,
     platforms: platforms,
     notes: notes,
-    releaseDate: releaseDate,
-    difficulty: difficulty,
+    releaseDate,
+ difficulty: difficulty,
     played: played,
     personalRating: personalRating,
-    gameListId: myAdventure._id,
+   
   //  userId: user._id,
   };
 

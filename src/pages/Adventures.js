@@ -22,6 +22,9 @@ function Adventures(props){
             return (
                 <div key={element._id} className="project-summary box">
                     <p>{element.name}</p>
+                    <img src={element.image} alt="" />
+                    <p>{element.franchise}</p>
+                    <p>{element.summary}</p>
                     <NavLink to={`/adventures/${element._id}`}>More details</NavLink> |&nbsp;
                     <NavLink to={`/adventures/${element._id}/edit`}>Edit</NavLink> |&nbsp;
                     <a href="#" onClick={() => {deleteAdventure(element._id)}}>Delete</a>

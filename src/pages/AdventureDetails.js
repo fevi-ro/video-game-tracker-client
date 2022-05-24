@@ -32,36 +32,23 @@ function AdventureDetails (props) {
         <>
           <h1>{adventure.name}</h1>
           {console.log(adventure.name)}
-          <p>{adventure.image}</p>
+   <img src={adventure.image} alt="game cover" />
           <h4>Description:</h4>
             <p>{adventure.franchise}</p>
+            <p>{adventure.releaseDate}</p>
             <h3>{adventure.date}</h3>
             <h3>{adventure.platforms}</h3>
             <h3>{adventure.notes}</h3>
-            <p>{adventure.releaseDate}</p>
+            <p>{adventure.description}</p>
+            <h3>{adventure.similarGames}</h3>
+            <h3>{adventure.companiesInvolved}</h3>
             <h3>{adventure.difficulty}</h3>
             <p>{adventure.played}</p>
             <p>{adventure.personalRating}</p>
         </>
       )} 
 
- 
-  {/* {adventure &&
-        props.adventure?.map((adventure) => (
-          <li className="TaskCard card" key={advId}>
-            <h3>{adventure.name}</h3>
-            <h4>Description:</h4>
-            <p>{adventure.franchise}</p>
-            <h3>{adventure.date}</h3>
-            <h3>{adventure.platforms}</h3>
-            <h3>{adventure.notes}</h3>
-            <h3>{adventure.releaseDate}</h3>
-            <h3>{adventure.difficulty}</h3>
-            <h3>{adventure.played}</h3>
-            <h3>{adventure.personalRating}</h3>
-            <h3>{adventure.image}</h3>
-          </li>
-      ))}  */}
+
  
       <Link to="/adventures">
         <button>Back to adventures</button>

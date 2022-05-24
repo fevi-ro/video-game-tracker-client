@@ -19,6 +19,8 @@ const SearchedGames = (props) => {
                             image={data.url ? data.url.replace("t_thumb", "t_cover_big") : null} 
                             name={data.name}
                             description={data.summary}
+                            releaseDate={data.first_release_date}
+                            franchise={data.franchise}
                             searched
                         />
             })}

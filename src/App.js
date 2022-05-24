@@ -1,8 +1,8 @@
 import './App.css';
-import { Routes, Route, useNavigate } from "react-router-dom"; 
+import { Routes, Route } from "react-router-dom"; 
 import Navbar from "./components/Navbar";     
 import Homepage from "./components/Homepage";    
-import {useEffect, useState, useRef} from "react"
+import {useEffect, useState} from "react"
 import axios from 'axios'
 import SignupPage from "./pages/SignupPage";
 import LoginPage from './pages/LoginPage';
@@ -14,7 +14,7 @@ import CreateAdventure from './pages/CreateAdventure';
 import EditAdventure from './pages/EditAdventure';
 import AdventureDetails from './pages/AdventureDetails';
 import AddGameFromAPI from './components/AddGameFromAPI';
-import SearchedGames from './components/SearchedGames';
+
 
 
 function App() {
