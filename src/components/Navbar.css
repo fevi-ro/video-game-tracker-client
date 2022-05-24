@@ -1,0 +1,19 @@
+
+  h2 {
+    vertical-align: center;
+    text-align: center;
+  }
+  
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  * {
+    font-family: "Raleway";
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+      padding-bottom: 4rem;
+  }

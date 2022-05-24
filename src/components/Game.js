@@ -1,40 +1,37 @@
 import React from 'react'
 import { useDisclosure } from '@chakra-ui/react'
 import GameDetails from './GameDetails'
+import moment from 'moment';
+import './Game.css';
 
 
 
 const Game = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
+    const releaseDate = moment.unix(props.releaseDate).format("MM/DD/YYYY")
 
     if (props.searched) {
-     
+ 
     }
 
     return (
-        <section>
+
+
+        <section className='card'>
         <button
-        
-            m="10px" 
-            padding="1px"
-            height="fit-content"
-            display="inline-block"
-            rounded={10}
-            _hover={{bg: "#581845"}}
-            background="#CAFFB3"
-            boxshadow="5px 5px #900C3F"
-            onClick={onOpen}
+     
+        className='gameCard'
+ onClick={onOpen}
         >
-            <div>
+            <div className='cardContent'>
               
                 <img src={props.image} alt="Game Image" width="500" height="600"></img>
-            </div>
-            <div>
-               <h4>
+                <h4>
                     {props.name}
                 </h4>
             </div>
+  
         
             
                 <GameDetails 
@@ -45,6 +42,9 @@ const Game = (props) => {
                     id={props.id}
                     description={props.description}
                     franchise={props.franchise}
+            platforms={props.platforms}
+            
+                    totalRating={props.totalRating}
                     releaseDate={props.releaseDate}
                 />
         
@@ -54,6 +54,7 @@ const Game = (props) => {
 
 
 </section>
+
     )
 }
 

@@ -1,0 +1,25 @@
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: rgb(2, 24, 24);
+    align-items: center;
+    text-align: center; 
+margin-bottom: 1rem;
+    width: 30%;
+}
+
+
+.gameCard {
+
+    max-width: 90%;
+}
+.gameCard img {
+
+width: 80%;
+object-fit: cover;
+}
+
+.cardContent {
+padding: 0.2rem;
+background-color: brown;
+}

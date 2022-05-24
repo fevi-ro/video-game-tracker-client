@@ -3,16 +3,17 @@ import React from 'react'
 import Game from './Game'
 
 const SearchedGames = (props) => {
-    return (
-        <div 
 
-          height="65vh" 
-          border='1px' 
   
-          width={{"sm": "98vw", "2xl": "50vw"}}
-          rounded={10}
+    return (
+      
+<main className='searchedGames'>
+        <div className='container' 
+
+ 
         >
             {props.gameData.map(data => {
+
                 return <Game
                             key={data.id}
                             id={data.id}
@@ -21,11 +22,15 @@ const SearchedGames = (props) => {
                             description={data.summary}
                             releaseDate={data.first_release_date}
                             franchise={data.franchise}
+                    platforms={data.platforms}
+                            totalRating={data.total_rating_count}
                             searched
                         />
             })}
         </div>
+        </main>
     )
+    
 }
 
 export default SearchedGames

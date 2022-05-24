@@ -1,21 +1,43 @@
 import { NavLink } from "react-router-dom";
 import {useContext} from 'react';
 import { AuthContext } from "../context/auth.context"; 
- 
+import { ResponsiveNavbar } from "react-hamburger-menus";
+import "react-hamburger-menus/dist/style.css";
+import './Navbar.css';
+
+
 function Navbar() {
 
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
 
   return (
-    <nav className="Navbar">
-    <NavLink to="/">Home</NavLink> | 
-    <NavLink to="/games">Browse Games</NavLink> | 
-    <NavLink to="/adventures">My Adventures</NavLink> |||
-    { isLoggedIn &&
+
+<ResponsiveNavbar   
+
+    logo={<p>Logo</p>}
+    
+    styles={{
+      navigation: { fontFamily: 'Arial, Helvetica, sans-serif' },
+      navigationBarSmall: {
+        backgroundColor: 'aliceblue',
+      },
+      navigationCardSmall: {
+        backgroundColor: 'aliceblue',
+      },
+    }}
+
+    className="navbar"
+  >
+      <ul>
+        <li> <NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/games">Browse Games</NavLink></li>
+        <li><NavLink to="/adventures">My Adventures</NavLink> </li>
+        { isLoggedIn &&
+    
 
 <>
-<span>Welcome {user.email}</span>
+<li><span>Welcome {user.email}</span></li>
 
 
 
@@ -28,13 +50,18 @@ function Navbar() {
  
     }
 
-    { !isLoggedIn &&
+{ !isLoggedIn &&
         <>
-            <NavLink to="/signup">Register</NavLink> |
-            <NavLink to="/login">Login</NavLink> |
+
+         <li><NavLink to="/signup">Register</NavLink></li> 
+       <li><NavLink to="/login">Login</NavLink></li>   
         </>
     }
-</nav>
+
+ 
+      </ul>
+
+  </ResponsiveNavbar>
   );
 }
  

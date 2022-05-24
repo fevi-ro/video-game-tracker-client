@@ -1,0 +1,17 @@
+.searchedGames {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: rgb(255, 225, 0);
+    align-items: center;
+    text-align: center; 
+    height: 40rem;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: rgb(255, 225, 0);
+    align-items: center;
+    text-align: center; 
+    height: 40rem;
+}

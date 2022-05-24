@@ -1,0 +1,17 @@
+input {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+  }
+
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    align-items: center;
+    text-align: center; 
+    height: 40rem;
+}

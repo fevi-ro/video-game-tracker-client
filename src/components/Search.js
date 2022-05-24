@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import SearchedGames from './SearchedGames'
-
+import './Search.css';
 
 
 const Search = () => {
@@ -33,8 +33,8 @@ const Search = () => {
     }
 
     return (
-        <div>
-            <h2>Search</h2>
+        <main className='search'>
+            <h1>Browse Games</h1>
             <input
                  type="text"
                 placeholder="Game Title" 
@@ -48,7 +48,7 @@ const Search = () => {
             </button>
             {searchResults ? <h2>Results</h2> : null}
             {searchResults}
-        </div>
+        </main>
     )
 }
 

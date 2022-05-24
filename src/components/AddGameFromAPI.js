@@ -18,7 +18,7 @@ function AddGameFromAPI(props) {
     myAdventure.releaseDate = "";
     myAdventure.platforms = "";
     myAdventure._id = "";
-    myAdventure.totalRating = 0;
+    myAdventure.totalRating = "";
   } else {
     myAdventure = Object.assign({}, props.adventureData); //assigning to my game so it can be referenced in the form
   }
@@ -26,6 +26,7 @@ function AddGameFromAPI(props) {
   //set value of form input from the games catalogue (if any) or the empty form
   const [name, setName] = useState(props.name);
   const [image, setImage] = useState(props.image);
+  const [totalRating, setTotalRating] = useState(props.totalRating);
   const [franchise, setFranchise] = useState(props.franchise);
   const [releaseDate, setReleaseDate] = useState(myAdventure.releaseDate);
   const [platforms, setPlatforms] = useState(myAdventure.platforms);
@@ -47,6 +48,7 @@ function AddGameFromAPI(props) {
     name:name,
     image: image,
     franchise: franchise,
+    totalRating:totalRating,
     date: date,
     platforms: platforms,
     notes: notes,
@@ -74,6 +76,7 @@ function AddGameFromAPI(props) {
       .then((response) => {
         setName("");
         setFranchise("");
+        setTotalRating("");
         setDate("");
         setPlatforms("");
         setNotes("");
@@ -123,6 +126,16 @@ function AddGameFromAPI(props) {
                         value={franchise}
                         required={false}
                         onChange={(e) => setFranchise(e.target.value)}
+                    />
+                </label>
+                <label>
+                Total Rating
+                    <input
+                        type="text"
+                        name="totalRating"
+                        value={totalRating}
+                        required={false}
+                        onChange={(e) => setTotalRating(e.target.value)}
                     />
                 </label>
                 <label>
