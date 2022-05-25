@@ -1,0 +1,22 @@
+
+
+  .editAdventure {
+      width: 50%;
+      color: white;
+      font-size: 1.5rem;
+
+  }
+
+  .wrapperEdit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(21,0,41);
+      background: linear-gradient(90deg, rgba(21,0,41,1) 13%, rgba(41,161,156,1) 65%, rgba(163,247,191,1) 100%);
+      padding-bottom: 3rem;
+  }
+
+  .signupPage, .loginPage {
+      height: 55rem;
+      padding-bottom: 5rem;
+  }

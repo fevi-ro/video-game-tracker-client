@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
-
+import './AddGameFromAPI.css';
 
 
 function AddGameFromAPI(props) {
@@ -86,93 +86,104 @@ function AddGameFromAPI(props) {
         setPlayed("");
         setPersonalRating(0);
 
+        props.callbackUpdateList();
+
         navigate("/adventures");
       })
       .catch((error) => {
         setErrorMessage(error.message);
       });
   };
-
+//
+ 
     return (
-        <section className="EditAdventure">
+        <section className="addGame">
             <h1>Add Game</h1>
-
+         
             <form onSubmit={createNewAdventure}>
-                <label>
-                    Name
+                <label for="name">
+                    Game title
                     <input
                         type="text"
+                        id="name"
                         name="name"
                         value={name}
                         required={true}
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="image">
                 Image
                     <input
                         type="text"
                         name="image"
+                        id="image"
                         value={image}
                         required={false}
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="franchise">
                 Franchise
                     <input
                         type="text"
+                        id="franchise"
                         name="franchise"
                         value={franchise}
                         required={false}
                         onChange={(e) => setFranchise(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="totalRating">
                 Total Rating
                     <input
-                        type="text"
+                        type="number"
+                        id="totalRating"
                         name="totalRating"
                         value={totalRating}
                         required={false}
                         onChange={(e) => setTotalRating(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="date"> 
                 Date Played
                     <input
-                        type="text"
+                        type="date"
+                        id="date"
                         name="date"
                         value={date}
                         required={false}
                         onChange={(e) => setDate(e.target.value)}
                     />
-                </label>
-                <label>
+               </label>
+                <label for="platforms">
                 Platforms
                     <input
                         type="text"
                         name="platforms"
+                        id="platforms"
                         value={platforms}
                         required={false}
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="notes">
                 Notes
                     <input
                         type="text"
                         name="notes"
+                        id="notes"
                         value={notes}
                         required={false}
                         onChange={(e) => setNotes(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="releaseDate">
                 Release Date
                     <input
-                        type="text"
+                        type="date"
                         name="releaseDate"
+                        id="releaseDate"
                         value={releaseDate}
                         required={false}
                         onChange={(e) => setReleaseDate(e.target.value)}
@@ -193,16 +204,17 @@ function AddGameFromAPI(props) {
         <label>Played</label>
         <select value={played} onChange={(e) => setPlayed(e.target.value)}>
           <option value="">Please select one</option>
-          <option value="true">Played</option>
-          <option value="false">Not Played</option>
+          <option value="played">Played</option>
+          <option value="not played">Not Played</option>
         </select>
-                <label>
+                <label for="personalRating">
                 Personal Rating
                     <input
-                        type="text"
+                        type="number"
                         name="personalRating"
+                        id="personalRating"
                         value={personalRating}
-                        required={true}
+                        required={false}
                         onChange={(e) => setPersonalRating(e.target.value)}
                     />
                 </label>

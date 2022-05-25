@@ -1,18 +1,67 @@
 .details {
     display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 224, 224);
-    max-width: 70%;
+    flex-direction: row;
+    background: rgb(21,0,41);
+    background: linear-gradient(90deg, rgba(21,0,41,1) 13%, rgba(41,161,156,1) 65%, rgba(163,247,191,1) 100%);
+    max-width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 80rem;
+    padding-top: 50rem;
+
 }
 
-input {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+.heading {
+    padding-top: 12rem;
+}
+
+p {
     font-size: 1.2rem;
-  }
+    margin: 1rem;
+}
+.description {
+    width: 30%;
+    margin-left: 3rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(30, 0, 60);
+    border-radius: 2rem;
+}
+
+.addGameForm {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70rem;
+    margin-top: 5rem;
+}
+
+.addGameForm label {
+    color: white;
+    font-size: 1.3rem;
+
+}
+
+
+.gameAdd, .gameData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10rem;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .description {
+    width: 100%;
+           margin: auto;
+
+       }
+
+       .details {
+        flex-direction: column;
+       }
+
+       .gameData {
+           display: block;
+       }
+   }

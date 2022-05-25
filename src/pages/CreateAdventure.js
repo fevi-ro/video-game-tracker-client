@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
-
+import './EditAdventure.css';
 
 
 function CreateAdventure(props) {
@@ -31,6 +31,7 @@ function CreateAdventure(props) {
   const [releaseDate, setReleaseDate] = useState(myAdventure.releaseDate);
   const [platforms, setPlatforms] = useState(myAdventure.platforms);
  const [played, setPlayed] = useState("");
+ const [totalRating, setTotalRating] = useState("");
   
 
   //set value of form input to blank
@@ -56,10 +57,10 @@ function CreateAdventure(props) {
     played: played,
     personalRating: personalRating,
     gameListId: myAdventure._id,
-  //  userId: user._id,
+  totalRating: totalRating
   };
 
-  const createNewAdventure = (e) => {
+  const {createNewAdventure, handleSubmit} = (e) => {
     e.preventDefault();
 
 
@@ -83,6 +84,7 @@ function CreateAdventure(props) {
         setDifficulty("");
         setPlayed("");
         setPersonalRating(0);
+        setTotalRating("");
 
         navigate("/adventures");
       })
@@ -91,11 +93,11 @@ function CreateAdventure(props) {
       });
   };
 
-  //set game from the API
-  //fill name with game name from API
   return (
-    <div>
+    <div className="wrapperEdit">
+           <section className="editAdventure">
       <form className="form" onSubmit={createNewAdventure}>
+      <h1>Add Adventure</h1>
         <label>Name</label>
         <input
           type="text"
@@ -161,8 +163,8 @@ function CreateAdventure(props) {
         <label>Played</label>
         <select value={played} onChange={(e) => setPlayed(e.target.value)}>
           <option value="">Please select one</option>
-          <option value="true">Played</option>
-          <option value="false">Not Played</option>
+          <option value="played">Played</option>
+          <option value="not played">Not Played</option>
         </select>
         <div className="form-buttons">
       
@@ -172,6 +174,7 @@ function CreateAdventure(props) {
         </div>
       </form>
       {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
+      </section>
     </div>
   );
 }

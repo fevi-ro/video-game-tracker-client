@@ -1,4 +1,4 @@
-input {
+.search input {
     width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -10,8 +10,9 @@ input {
   .search {
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+    background: rgb(21,0,41);
+    background: linear-gradient(90deg, rgba(21,0,41,1) 13%, rgba(41,161,156,1) 65%, rgba(163,247,191,1) 100%);
     align-items: center;
     text-align: center; 
-    height: 40rem;
+    height: 250rem;
 }

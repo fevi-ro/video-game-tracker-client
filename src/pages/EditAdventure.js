@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+import './EditAdventure.css';
 
 function EditAdventure(props) {
 
@@ -48,84 +49,91 @@ function EditAdventure(props) {
             .then(response => {
                 props.callbackUpdateList();
 
-                navigate("/adventures"); // redirect to project list
-                // navigate(`/projects/${response.data._id}`); // redirect to project page
+                navigate("/adventures"); 
             })
             .catch(e => console.log("error updating adventure...", e));
     }
 
     return (
-        <section className="EditAdventure">
+        <div className="wrapperEdit">
+        <section className="editAdventure">
             <h1>Edit</h1>
 
             <form onSubmit={handleSubmit}>
-                <label>
-                    Title
+            <label for="name">
+                Game title
                     <input
                         type="text"
+                        id="name"
                         name="name"
                         value={name}
                         required={true}
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="image">
                 Image
                     <input
                         type="text"
                         name="image"
+                        id="image"
                         value={image}
                         required={false}
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="franchise">
                 Franchise
                     <input
                         type="text"
                         name="franchise"
+                        id="franchise"
                         value={franchise}
-                        required={true}
+                        required={false}
                         onChange={(e) => setFranchise(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="date"> </label>
                 Date Played
-                    <input
-                        type="text"
+                <input
+                        type="date"
+                        id="date"
                         name="date"
                         value={date}
-                        required={true}
+                        required={false}
                         onChange={(e) => setDate(e.target.value)}
                     />
-                </label>
-                <label>
+
+   
+                <label for="platforms">
                 Platforms
                     <input
                         type="text"
                         name="platforms"
+                        id="platforms"
                         value={platforms}
-                        required={true}
+                        required={false}
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="notes">
                 Notes
                     <input
                         type="text"
                         name="notes"
+                        id="notes"
                         value={notes}
-                        required={true}
+                        required={false}
                         onChange={(e) => setNotes(e.target.value)}
                     />
                 </label>
-                <label>
+                <label for="releaseDate">
                 Release Date
                     <input
                         type="text"
-                        name="releaseDate"
+                        name="releaseDate"          id="releaseDate"
                         value={releaseDate}
-                        required={true}
+                        required={false}
                         onChange={(e) => setReleaseDate(e.target.value)}
                     />
                 </label>
@@ -144,16 +152,17 @@ function EditAdventure(props) {
         <label>Played</label>
         <select value={played} onChange={(e) => setPlayed(e.target.value)}>
           <option value="">Please select one</option>
-          <option value="true">Played</option>
-          <option value="false">Not Played</option>
+          <option value="played">Played</option>
+          <option value="not played">Not Played</option>
         </select>
-                <label>
+        <label for="personalRating">
                 Personal Rating
                     <input
-                        type="text"
+                        type="nu,ber"
                         name="personalRating"
+                        id="personalRating"
                         value={personalRating}
-                        required={true}
+                        required={false}
                         onChange={(e) => setPersonalRating(e.target.value)}
                     />
                 </label>
@@ -162,7 +171,9 @@ function EditAdventure(props) {
 
             </form>
 
+ <NavLink to="/adventures" className="button">Back</NavLink> 
         </section>
+        </div>
     )
 }
 

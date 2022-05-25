@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-
+import './Adventures.css';
 
 
 function Adventures(props){
@@ -20,14 +20,15 @@ function Adventures(props){
     const renderAdventures = () => {
         const result = props.adventures.map( (element) => {
             return (
-                <div key={element._id} className="project-summary box">
-                    <p>{element.name}</p>
+                <div key={element._id} className="adventureBox">
+                    <div className="cardAdv">
+                    <h2>{element.name}</h2>
                     <img src={element.image} alt="" />
-                    <p>{element.franchise}</p>
-                    <p>{element.summary}</p>
+                    <h3>Total Rating: {element.totalRating}</h3>
                     <NavLink to={`/adventures/${element._id}`}>More details</NavLink> |&nbsp;
                     <NavLink to={`/adventures/${element._id}/edit`}>Edit</NavLink> |&nbsp;
                     <a href="#" onClick={() => {deleteAdventure(element._id)}}>Delete</a>
+                    </div>
                 </div>
             )
         });
@@ -35,7 +36,7 @@ function Adventures(props){
     }
 
     return (
-        <div className="Adventures">
+        <div className="adventures">
             <h1>My Adventures</h1>
 
             <NavLink to={'/adventures/create'}>Add Adventure</NavLink>

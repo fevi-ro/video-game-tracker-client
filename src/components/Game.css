@@ -1,7 +1,7 @@
 .card {
     display: inline-flex;
     flex-direction: column;
-    background-color: rgb(2, 24, 24);
+    background-color: transparent;
     align-items: center;
     text-align: center; 
 margin-bottom: 1rem;
@@ -10,16 +10,25 @@ margin-bottom: 1rem;
 
 
 .gameCard {
-
+    background-color: transparent;
     max-width: 90%;
+    border-color: transparent;
 }
 .gameCard img {
 
 width: 80%;
-object-fit: cover;
+object-fit: contain;
 }
 
 .cardContent {
 padding: 0.2rem;
-background-color: brown;
+background-color:  #850048;
+
+border-radius: 5rem;
+
+}
+
+.gameCard h4 {
+color: white;
+font-size: 2rem;
 }

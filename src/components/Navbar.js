@@ -4,6 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import { ResponsiveNavbar } from "react-hamburger-menus";
 import "react-hamburger-menus/dist/style.css";
 import './Navbar.css';
+import logo from '../images/logo.png';
 
 
 function Navbar() {
@@ -15,20 +16,21 @@ function Navbar() {
 
 <ResponsiveNavbar   
 
-    logo={<p>Logo</p>}
+
     
     styles={{
-      navigation: { fontFamily: 'Arial, Helvetica, sans-serif' },
+
       navigationBarSmall: {
-        backgroundColor: 'aliceblue',
+        backgroundColor: 'transparent',
       },
       navigationCardSmall: {
-        backgroundColor: 'aliceblue',
+        backgroundColor: "transparent"
       },
     }}
 
     className="navbar"
   >
+     <img className="logo" src={logo} alt="Logo" />
       <ul>
         <li> <NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/games">Browse Games</NavLink></li>

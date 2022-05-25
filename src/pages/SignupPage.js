@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
- 
+import './EditAdventure.css';
 
  
  
@@ -30,13 +30,14 @@ function SignupPage(props) {
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
-        setErrorMessage("Error creating a new account, please make sure you're provigins the correct information", errorDescription);
+        setErrorMessage("Error creating a new account, please make sure you're providing the correct information", errorDescription);
       })
   };
  
   
   return (
-    <div className="SignupPage">
+    <div className="signupPage wrapperEdit">
+              <section className="editAdventure">
       <h1>Sign Up</h1>
  
       <form onSubmit={handleSignupSubmit}>
@@ -64,6 +65,7 @@ function SignupPage(props) {
  
       <p>Already have account?</p>
       <Link to={"/login"}> Login</Link>
+      </section>
     </div>
   )
 }

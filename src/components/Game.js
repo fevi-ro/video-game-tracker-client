@@ -8,6 +8,7 @@ import './Game.css';
 
 const Game = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    
 
     const releaseDate = moment.unix(props.releaseDate).format("MM/DD/YYYY")
 

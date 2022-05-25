@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-
+import './EditAdventure.css';
  
  
 function LoginPage(props) {
@@ -36,7 +36,8 @@ function LoginPage(props) {
  
   
   return (
-    <div className="LoginPage">
+    <div className="loginPage wrapperEdit">
+            <section className="editAdventure">
       <h1>Login</h1>
  
       <form onSubmit={handleLoginSubmit}>
@@ -62,6 +63,7 @@ function LoginPage(props) {
  
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
+      </section>
     </div>
   )
 }
