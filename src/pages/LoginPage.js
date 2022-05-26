@@ -30,6 +30,7 @@ function LoginPage(props) {
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
+        setErrorMessage("Error login in, please make sure you're providing the correct information", errorDescription);
         setErrorMessage(errorDescription);
       })
   };

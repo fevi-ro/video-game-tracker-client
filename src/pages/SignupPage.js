@@ -31,6 +31,7 @@ function SignupPage(props) {
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage("Error creating a new account, please make sure you're providing the correct information", errorDescription);
+        setErrorMessage(errorDescription);
       })
   };
  
