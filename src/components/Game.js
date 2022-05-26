@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDisclosure } from '@chakra-ui/react'
 import GameDetails from './GameDetails'
-import moment from 'moment';
 import './Game.css';
 
 
@@ -10,11 +9,9 @@ const Game = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     
 
-    const releaseDate = moment.unix(props.releaseDate).format("MM/DD/YYYY")
-
-    if (props.searched) {
+    // if (props.searched) {
  
-    }
+    // }
 
     return (
 

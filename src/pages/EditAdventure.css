@@ -17,6 +17,6 @@
   }
 
   .signupPage, .loginPage {
-      height: 55rem;
+      min-height: fit-content;
       padding-bottom: 5rem;
   }

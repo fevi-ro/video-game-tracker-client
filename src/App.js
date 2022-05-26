@@ -14,6 +14,7 @@ import CreateAdventure from './pages/CreateAdventure';
 import EditAdventure from './pages/EditAdventure';
 import AdventureDetails from './pages/AdventureDetails';
 import AddGameFromAPI from './components/AddGameFromAPI';
+import Game from "./components/Game";
 
 
 
@@ -21,6 +22,7 @@ function App() {
   
   const [adventures, setAdventures] = useState([]);
  // const [games, setGames] = useState([])
+ console.log(adventures)
   const storedToken = localStorage.getItem("authToken");
   useEffect(() => {
     fetchAdventures();
@@ -54,14 +56,14 @@ function App() {
 <Routes>
 <Route path='/' element={ <Homepage /> } />
 
-<Route path='/games' element={ <IsPrivate><Search/> </IsPrivate>} /> 
+<Route path='/games' element={ <IsPrivate><Search/> <Game/> <AddGameFromAPI callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 
 
-
- <Route path='/add-adventure/:advid'element={ <IsPrivate><AddGameFromAPI adventures={adventures} callbackUpdateList={fetchAdventures}/> </IsPrivate>} />   
+{/* 
+ <Route path='/add-adventure/:advid'element={ <IsPrivate><AddGameFromAPI adventures={adventures} callbackUpdateList={fetchAdventures}/> </IsPrivate>} />    */}
 
 <Route path='/adventures' element={ <IsPrivate><Adventures adventures={adventures} callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 
 
-<Route path='/adventures/create' element={ <IsPrivate> <CreateAdventure/> </IsPrivate>} />
+<Route path='/adventures/create' element={ <IsPrivate> <CreateAdventure callbackUpdateList={fetchAdventures}/> </IsPrivate>} />
 <Route path="/adventures/:advId" element={  <IsPrivate> <AdventureDetails /> </IsPrivate>} />   
 <Route path='/adventures/:advId/edit' element={ <IsPrivate> <EditAdventure adventures={adventures} callbackUpdateList={fetchAdventures}/>  </IsPrivate>} />      
 <Route path="/signup" element={ <IsAnon> <SignupPage /> </IsAnon>} />

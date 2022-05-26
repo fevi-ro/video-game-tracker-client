@@ -61,7 +61,7 @@ function EditAdventure(props) {
 
             <form onSubmit={handleSubmit}>
             <label for="name">
-                Game title
+                Game Title
                     <input
                         type="text"
                         id="name"
@@ -82,20 +82,9 @@ function EditAdventure(props) {
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <label for="franchise">
-                Franchise
-                    <input
-                        type="text"
-                        name="franchise"
-                        id="franchise"
-                        value={franchise}
-                        required={false}
-                        onChange={(e) => setFranchise(e.target.value)}
-                    />
-                </label>
-                <label for="date"> </label>
+                <label for="date"> 
                 Date Played
-                <input
+                    <input
                         type="date"
                         id="date"
                         name="date"
@@ -103,15 +92,15 @@ function EditAdventure(props) {
                         required={false}
                         onChange={(e) => setDate(e.target.value)}
                     />
-
-   
-                <label for="platforms">
+               </label>
+               <label for="platforms">
                 Platforms
                     <input
                         type="text"
                         name="platforms"
                         id="platforms"
                         value={platforms}
+                        placeholder="Playstation, SNES, etc."
                         required={false}
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
@@ -125,16 +114,6 @@ function EditAdventure(props) {
                         value={notes}
                         required={false}
                         onChange={(e) => setNotes(e.target.value)}
-                    />
-                </label>
-                <label for="releaseDate">
-                Release Date
-                    <input
-                        type="text"
-                        name="releaseDate"          id="releaseDate"
-                        value={releaseDate}
-                        required={false}
-                        onChange={(e) => setReleaseDate(e.target.value)}
                     />
                 </label>
                 <label>Difficulty</label>
@@ -155,17 +134,20 @@ function EditAdventure(props) {
           <option value="played">Played</option>
           <option value="not played">Not Played</option>
         </select>
-        <label for="personalRating">
-                Personal Rating
-                    <input
-                        type="nu,ber"
-                        name="personalRating"
-                        id="personalRating"
-                        value={personalRating}
-                        required={false}
-                        onChange={(e) => setPersonalRating(e.target.value)}
-                    />
-                </label>
+        <label>Personal Rating</label>
+        <select value={personalRating} onChange={(e) => setPersonalRating(e.target.value)}>
+          <option value="">Please select one</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
 
                 <button type="submit">Update Adventure</button>
 

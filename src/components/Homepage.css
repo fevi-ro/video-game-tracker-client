@@ -21,7 +21,7 @@ color: white;
     background-size: cover;
     position: relative;
     overflow: hidden;
-    height: 955px;
+    min-height: 873px;
    background-color: rgb(0, 0, 0);
 
 

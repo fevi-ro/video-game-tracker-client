@@ -1,7 +1,7 @@
 .adventures {
     background: rgb(21,0,41);
     background: linear-gradient(90deg, rgba(21,0,41,1) 13%, rgba(41,161,156,1) 65%, rgba(163,247,191,1) 100%);
-    height: 250rem;
+    min-height: 250rem;
     position: relative;
     overflow: hidden;
 }

@@ -26,9 +26,6 @@ function AddGameFromAPI(props) {
   //set value of form input from the games catalogue (if any) or the empty form
   const [name, setName] = useState(props.name);
   const [image, setImage] = useState(props.image);
-  const [totalRating, setTotalRating] = useState(props.totalRating);
-  const [franchise, setFranchise] = useState(props.franchise);
-  const [releaseDate, setReleaseDate] = useState(myAdventure.releaseDate);
   const [platforms, setPlatforms] = useState(myAdventure.platforms);
  const [played, setPlayed] = useState("");
   
@@ -47,19 +44,15 @@ function AddGameFromAPI(props) {
   const adventure = {
     name:name,
     image: image,
-    franchise: franchise,
-    totalRating:totalRating,
     date: date,
     platforms: platforms,
     notes: notes,
-    releaseDate,
  difficulty: difficulty,
     played: played,
     personalRating: personalRating,
-   
-  //  userId: user._id,
   };
-
+  console.log("testing adventures");
+console.log(adventure);
   const createNewAdventure = (e) => {
     e.preventDefault();
 
@@ -75,13 +68,10 @@ function AddGameFromAPI(props) {
       })
       .then((response) => {
         setName("");
-        setFranchise("");
-        setTotalRating("");
         setDate("");
         setPlatforms("");
         setNotes("");
         setImage("");
-        setReleaseDate("");
         setDifficulty("");
         setPlayed("");
         setPersonalRating(0);
@@ -102,7 +92,7 @@ function AddGameFromAPI(props) {
          
             <form onSubmit={createNewAdventure}>
                 <label for="name">
-                    Game title
+                    Game Title
                     <input
                         type="text"
                         id="name"
@@ -123,28 +113,6 @@ function AddGameFromAPI(props) {
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <label for="franchise">
-                Franchise
-                    <input
-                        type="text"
-                        id="franchise"
-                        name="franchise"
-                        value={franchise}
-                        required={false}
-                        onChange={(e) => setFranchise(e.target.value)}
-                    />
-                </label>
-                <label for="totalRating">
-                Total Rating
-                    <input
-                        type="number"
-                        id="totalRating"
-                        name="totalRating"
-                        value={totalRating}
-                        required={false}
-                        onChange={(e) => setTotalRating(e.target.value)}
-                    />
-                </label>
                 <label for="date"> 
                 Date Played
                     <input
@@ -163,6 +131,7 @@ function AddGameFromAPI(props) {
                         name="platforms"
                         id="platforms"
                         value={platforms}
+                        placeholder="Playstation, SNES, etc."
                         required={false}
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
@@ -176,17 +145,6 @@ function AddGameFromAPI(props) {
                         value={notes}
                         required={false}
                         onChange={(e) => setNotes(e.target.value)}
-                    />
-                </label>
-                <label for="releaseDate">
-                Release Date
-                    <input
-                        type="date"
-                        name="releaseDate"
-                        id="releaseDate"
-                        value={releaseDate}
-                        required={false}
-                        onChange={(e) => setReleaseDate(e.target.value)}
                     />
                 </label>
                 <label>Difficulty</label>
@@ -207,17 +165,20 @@ function AddGameFromAPI(props) {
           <option value="played">Played</option>
           <option value="not played">Not Played</option>
         </select>
-                <label for="personalRating">
-                Personal Rating
-                    <input
-                        type="number"
-                        name="personalRating"
-                        id="personalRating"
-                        value={personalRating}
-                        required={false}
-                        onChange={(e) => setPersonalRating(e.target.value)}
-                    />
-                </label>
+        <label>Personal Rating</label>
+        <select value={personalRating} onChange={(e) => setPersonalRating(e.target.value)}>
+          <option value="">Please select one</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
 
                 <button type="submit">Save Game</button>
 

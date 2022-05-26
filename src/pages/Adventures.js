@@ -4,7 +4,7 @@ import './Adventures.css';
 
 
 function Adventures(props){
-
+console.log(props);
     const deleteAdventure = (advId) => {
 
         const storedToken = localStorage.getItem('authToken');

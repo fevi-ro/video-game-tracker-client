@@ -14,10 +14,8 @@ function CreateAdventure(props) {
     myAdventure.name = "";
     myAdventure.image = "";
     myAdventure.franchise = "";
-    myAdventure.releaseDate = "";
     myAdventure.platforms = "";
     myAdventure._id = "";
-    myAdventure.totalRating = 0;
   } else {
     myAdventure = Object.assign({}, props.adventureData); //assigning to my game so it can be referenced in the form
   }
@@ -27,14 +25,8 @@ function CreateAdventure(props) {
     `${myAdventure.name} ${myAdventure.franchise}`
   );
   const [image, setImage] = useState(myAdventure.image);
-  const [franchise, setFranchise] = useState(myAdventure.franchise);
-  const [releaseDate, setReleaseDate] = useState(myAdventure.releaseDate);
   const [platforms, setPlatforms] = useState(myAdventure.platforms);
  const [played, setPlayed] = useState("");
- const [totalRating, setTotalRating] = useState("");
-  
-
-  //set value of form input to blank
   const [difficulty, setDifficulty] = useState("");
   const [date, setDate] = useState("");
   const [notes, setNotes] = useState("");
@@ -48,19 +40,16 @@ function CreateAdventure(props) {
   const adventure = {
     name: name,
     image: image,
-    franchise: franchise,
     date: date,
     platforms: platforms,
     notes: notes,
-    releaseDate: releaseDate,
     difficulty: difficulty,
     played: played,
     personalRating: personalRating,
-    gameListId: myAdventure._id,
-  totalRating: totalRating
+    gameListId: myAdventure._id
   };
 
-  const {createNewAdventure, handleSubmit} = (e) => {
+  const createNewAdventure = (e) => {
     e.preventDefault();
 
 
@@ -75,17 +64,17 @@ function CreateAdventure(props) {
       })
       .then((response) => {
         setName("");
-        setFranchise("");
         setDate("");
         setPlatforms("");
         setNotes("");
         setImage("");
-        setReleaseDate("");
         setDifficulty("");
         setPlayed("");
         setPersonalRating(0);
-        setTotalRating("");
 
+
+
+        // props.callbackUpdateList();
         navigate("/adventures");
       })
       .catch((error) => {
@@ -98,7 +87,7 @@ function CreateAdventure(props) {
            <section className="editAdventure">
       <form className="form" onSubmit={createNewAdventure}>
       <h1>Add Adventure</h1>
-        <label>Name</label>
+        <label>Game Title</label>
         <input
           type="text"
           value={name}
@@ -115,15 +104,29 @@ function CreateAdventure(props) {
             setImage(e.target.value);
           }}
         ></input>
-        <label>Franchise</label>
-        <input
-        type="text"  
-          value={franchise}
-          onChange={(e) => {
-            setFranchise(e.target.value);
-          }}
-          ></input>
-
+         <label for="date"> 
+                Date Played
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value={date}
+                        required={false}
+                        onChange={(e) => setDate(e.target.value)}
+                    />
+               </label>
+           <label for="platforms">
+                Platforms
+                    <input
+                        type="text"
+                        name="platforms"
+                        id="platforms"
+                        value={platforms}
+                        placeholder="Playstation, SNES, etc."
+                        required={false}
+                        onChange={(e) => setPlatforms(e.target.value)}
+                    />
+                </label>
         <label>Difficulty</label>
         <select
           value={difficulty}
@@ -136,22 +139,20 @@ function CreateAdventure(props) {
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
         </select>
-        <label>Date Played</label>
-        <input
-          type="text"
-          value={date}
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
-        ></input>
         <label>Personal Rating</label>
-        <input
-          type="number"
-          value={personalRating}
-          onChange={(e) => {
-            setPersonalRating(e.target.value);
-          }}
-        ></input>
+        <select value={personalRating} onChange={(e) => setPersonalRating(e.target.value)}>
+          <option value="">Please select one</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
         <label>Notes</label>
         <input
           type="textarea"
