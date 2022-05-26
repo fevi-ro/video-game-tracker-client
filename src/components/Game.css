@@ -15,20 +15,37 @@ margin-bottom: 1rem;
     border-color: transparent;
 }
 .gameCard img {
-
+margin-top: -2rem;
 width: 80%;
 object-fit: contain;
 }
 
 .cardContent {
+    background-color: #ffe9f5;
 padding: 0.2rem;
-background-color:  #850048;
-
 border-radius: 5rem;
 
 }
 
 .gameCard h4 {
-color: white;
-font-size: 2rem;
+    color: #5b5b5b;
+    font-size: 2rem;
+    margin-top: -3rem;
 }
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+   
+    .card {
+     width: 100%;
+
+       }
+   
+   
+   .button {
+       padding-top: 6rem;
+       padding-bottom: 2rem;
+       color: white;
+       font-size: 1.3rem;
+   }
+   }

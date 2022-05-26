@@ -35,6 +35,13 @@ function GameDetails(props) {
                 <ModalContent className='details'>
                     <ModalCloseButton />
                     <ModalBody>
+                    <Box className='gameAdd'
+                  
+                                borderColor="black"
+                                padding="3px"
+                                maxHeight="800px"
+                                overflowY="scroll"
+                            >   
                         <div className='heading'> <h1>{props.name}</h1></div>
                    
                         <div className='gameData'>
@@ -55,13 +62,6 @@ function GameDetails(props) {
 
                         <div className="addGameForm">
 
-                            <Box className='gameAdd'
-                                borderWidth="2px"
-                                borderColor="black"
-                                padding="10px"
-                                maxHeight="300px"
-                                overflowY="scroll"
-                            >
                                 <AddGameFromAPI
                                     image={props.image}
                                     name={props.name}
@@ -71,10 +71,11 @@ function GameDetails(props) {
                                     releaseDate={props.releaseDate}
                                     totalRating={props.totalRating}
                                 />
-                            </Box>
+               
                             <button className="closeBtn" onClick={props.onClose}>Close</button>
                         </div>
 
+                        </Box>
                     </ModalBody>
                 </ModalContent>
             </Modal>

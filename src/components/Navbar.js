@@ -32,9 +32,9 @@ function Navbar() {
   >
      <img className="logo" src={logo} alt="Logo" />
       <ul>
-        <li> <NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/games">Browse Games</NavLink></li>
-        <li><NavLink to="/adventures">My Adventures</NavLink> </li>
+        <li> <NavLink to="/">HOME</NavLink></li>
+        <li><NavLink to="/games">BROWSE GAMES</NavLink></li>
+        <li><NavLink to="/adventures">MY ADVENTURES</NavLink> </li>
         { isLoggedIn &&
     
 
@@ -44,7 +44,7 @@ function Navbar() {
 
 
 {/*   UPDATE   */}
-<button onClick={logOutUser}>Logout</button>
+<button onClick={logOutUser}>LOGOUT</button>
 <span>{user && user.name}</span>
 </>
 
@@ -55,8 +55,8 @@ function Navbar() {
 { !isLoggedIn &&
         <>
 
-         <li><NavLink to="/signup">Register</NavLink></li> 
-       <li><NavLink to="/login">Login</NavLink></li>   
+         <li><NavLink to="/signup">REGISTER</NavLink></li> 
+       <li><NavLink to="/login">LOGIN</NavLink></li>   
         </>
     }
 

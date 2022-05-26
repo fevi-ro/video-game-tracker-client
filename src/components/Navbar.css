@@ -4,9 +4,11 @@
     text-align: center;
   }
 
-  a {
+  .navbar a {
     color: white;
     font-family: 'Droid Sans';
+    font-weight: 600;
+    font-size: 0.9rem;
   }
   
   html, body {
