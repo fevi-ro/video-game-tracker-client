@@ -25,9 +25,9 @@ console.log(props);
                     <h2>{element.name}</h2>
                     <img src={element.image} alt="" />
                     <h3>Total Rating: {element.totalRating}</h3>
-                    <NavLink to={`/adventures/${element._id}`}>More details</NavLink> |&nbsp;
-                    <NavLink to={`/adventures/${element._id}/edit`}>Edit</NavLink> |&nbsp;
-                    <a href="#" onClick={() => {deleteAdventure(element._id)}}>Delete</a>
+                    <NavLink to={`/adventures/${element._id}`}>MORE DETAILS</NavLink> &nbsp;&nbsp;&nbsp;
+                    <NavLink to={`/adventures/${element._id}/edit`}>EDIT</NavLink> &nbsp;&nbsp;&nbsp;
+                    <a href="#" onClick={() => {deleteAdventure(element._id)}}>DELETE</a>
                     </div>
                 </div>
             )
@@ -39,7 +39,7 @@ console.log(props);
         <div className="adventures">
             <h1>My Adventures</h1>
 
-            <NavLink to={'/adventures/create'}>Add Adventure</NavLink>
+            <NavLink className="addAdv" to={'/adventures/create'}>Add Adventure</NavLink>
            
 
              <section>

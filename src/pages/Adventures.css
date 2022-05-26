@@ -29,8 +29,69 @@ color: white;
     border-radius: 1rem;
 }
 
+.cardAdv a {
+    background-color: #740028;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+  
+    line-height: 20px;
+    list-style: none;
+    margin: 0.7rem;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.cardAdv a:hover {
+  background-color: #f3ae40;
+  color:#52001d;
+}
+
+a.addAdv{
+    text-decoration: none;
+    background-color: #740028;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+  
+    line-height: 20px;
+    list-style: none;
+    margin: 0.7rem;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   }
 
 
+   a:hover.addAdv {
+    background-color: #f3ae40;
+    color:#52001d;
+  }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
  .cardAdv {

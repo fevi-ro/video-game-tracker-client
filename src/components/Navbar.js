@@ -39,12 +39,12 @@ function Navbar() {
     
 
 <>
-<li><span>Welcome {user.email}</span></li>
+<li><span>WELCOME &nbsp; &nbsp; {user.email}</span></li>
 
 
 
 {/*   UPDATE   */}
-<button onClick={logOutUser}>LOGOUT</button>
+<button className="logout" onClick={logOutUser}>LOGOUT</button>
 <span>{user && user.name}</span>
 </>
 

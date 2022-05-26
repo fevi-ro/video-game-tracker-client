@@ -18,6 +18,52 @@ code {
 }
 
 
- a {
-   color: white;
+ button, .button, .logout, .closeBtn  {
+  background-color: #740028;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  line-height: 20px;
+  list-style: none;
+  margin: 0.7rem;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+button:hover,
+button:focus {
+  background-color: #f3ae40;
+  color:#52001d;
+}
+
+.button.card {
+  background-color: #f3ae40
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
  }
+ 
+ ul li a:hover,
+ul#subnavigation .active,
+ul li a.active,
+#subnavigation li a:hover {
+  color: #fdc161;
+}

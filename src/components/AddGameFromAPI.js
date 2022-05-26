@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import './AddGameFromAPI.css';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddGameFromAPI(props) {
   let myAdventure = {};
@@ -40,6 +41,7 @@ function AddGameFromAPI(props) {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
+ 
 
   const adventure = {
     name:name,
@@ -53,10 +55,14 @@ function AddGameFromAPI(props) {
   };
   console.log("testing adventures");
 console.log(adventure);
+
+
+
+
   const createNewAdventure = (e) => {
     e.preventDefault();
 
-
+ 
 
     const storedToken = localStorage.getItem("authToken");
 
@@ -76,6 +82,10 @@ console.log(adventure);
         setPlayed("");
         setPersonalRating(0);
 
+
+  
+
+
         props.callbackUpdateList();
 
         navigate("/adventures");
@@ -84,7 +94,16 @@ console.log(adventure);
         setErrorMessage(error.message);
       });
   };
-//
+
+  const notify = () => toast.success('🦄 Game saved to your adventures!', {
+    position: "bottom-center",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
  
     return (
         <section className="addGame">
@@ -180,13 +199,17 @@ console.log(adventure);
           <option value="10">10</option>
         </select>
 
-                <button type="submit">Save Game</button>
+  <button  type="submit" className="button" onClick={notify}>Save Game</button> 
 
+
+
+ 
             </form>
-
+            <ToastContainer />
         </section>
     )
 
     }
 
     export default AddGameFromAPI
+

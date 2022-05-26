@@ -19,7 +19,7 @@ function HomePage() {
           <NavLink to="/games" className="button">Browse Games</NavLink>
         </div>
   
-<NavLink to="/signup" className="button">Register</NavLink></article>
+</article>
 
 
       </main>

@@ -82,6 +82,7 @@ function CreateAdventure(props) {
       });
   };
 
+
   return (
     <div className="wrapperEdit">
            <section className="editAdventure">
@@ -95,7 +96,7 @@ function CreateAdventure(props) {
           onChange={(e) => {
             setName(e.target.value);
           }}
-        ></input>
+        />
         <label>Image</label>
         <input
           type="text"

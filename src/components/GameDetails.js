@@ -36,7 +36,7 @@ function GameDetails(props) {
                     <ModalCloseButton />
                     <ModalBody>
                     <Box className='gameAdd'
-                  
+                     
                                 borderColor="black"
                                 padding="3px"
                                 maxHeight="800px"
