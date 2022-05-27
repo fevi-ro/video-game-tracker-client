@@ -1,9 +1,6 @@
 import { NavLink } from "react-router-dom";
 import './Homepage.css';
 import background from '../images/background5.jpg';
-import background2 from '../images/background6.jpg';
-import background3 from '../images/background7.jpg';
-import background4 from '../images/background4.jpg';
 
 
 

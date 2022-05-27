@@ -1,0 +1,18 @@
+.search input {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+  }
+
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    background: rgb(21,0,41);
+    background: linear-gradient(90deg, rgba(21,0,41,1) 13%, rgba(41,161,156,1) 65%, rgba(163,247,191,1) 100%);
+    align-items: center;
+    text-align: center; 
+    min-height: 250rem;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Game from './Game'
+import GameCard from './GameCard'
 
 const SearchedGames = (props) => {
 
@@ -12,18 +12,18 @@ const SearchedGames = (props) => {
 
  
         >
-            {props.gameData.map(data => {
+            {props.results.map(game => {
 
-                return <Game
-                            key={data.id}
-                            id={data.id}
-                            image={data.url ? data.url.replace("t_thumb", "t_cover_big") : null} 
-                            name={data.name}
-                            description={data.summary}
-                            releaseDate={data.first_release_date}
-                            franchise={data.franchise}
-                    platforms={data.platforms}
-                            totalRating={data.total_rating_count}
+                return <GameCard
+                            key={game.id}
+                            id={game.id}
+                            image={game.url ? game.url.replace("t_thumb", "t_cover_big") : null} 
+                            name={game.name}
+                            description={game.summary}
+                            releaseDate={game.first_release_date}
+                            franchise={game.franchise}
+                    platforms={game.platforms}
+                            totalRating={game.total_rating_count}
                             searched
                         />
             })}

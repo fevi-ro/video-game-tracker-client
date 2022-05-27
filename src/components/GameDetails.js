@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 
-import { NavLink } from "react-router-dom";
+
+
 import {
     Modal,
     ModalOverlay,
@@ -10,7 +10,7 @@ import {
     Box
 } from "@chakra-ui/react"
 
-import { useParams } from "react-router-dom";
+
 import AddGameFromAPI from './AddGameFromAPI';
 import './GameDetails.css';
 
@@ -18,9 +18,7 @@ import './GameDetails.css';
 
 function GameDetails(props) {
 
-    const [game, setGame] = useState({});
-    const { gameId } = useParams();
-    const [scrollBehavior, setScrollBehavior] = React.useState('inside')
+
 
     return (
 
@@ -36,8 +34,7 @@ function GameDetails(props) {
                     <ModalCloseButton />
                     <ModalBody>
                     <Box className='gameAdd'
-                     
-                                borderColor="black"
+            
                                 padding="3px"
                                 maxHeight="800px"
                                 overflowY="scroll"

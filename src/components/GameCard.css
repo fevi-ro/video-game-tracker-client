@@ -1,0 +1,48 @@
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: transparent;
+    align-items: center;
+    text-align: center; 
+margin-bottom: 1rem;
+    width: 30%;
+}
+
+
+.gameCard {
+    background-color: transparent;
+    max-width: 90%;
+    border-color: transparent;
+}
+.gameCard img {
+margin-top: -2rem;
+width: 80%;
+object-fit: scale-down;
+}
+
+.cardContent {
+    background-color: #ffe9f5;
+
+border-radius: 5rem;
+
+}
+
+
+
+
+ .gameCard h4 {
+    color: #5b5b5b;
+    font-size: 1.5rem;
+    margin-top: -7rem;
+    padding: 1.5rem;
+} 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+   
+    .card {
+     width: 100%;
+
+       }
+   
+   
+ 
+   }

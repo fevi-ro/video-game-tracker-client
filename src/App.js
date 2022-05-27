@@ -9,12 +9,12 @@ import LoginPage from './pages/LoginPage';
 import IsPrivate from "./components/IsPrivate"; 
 import IsAnon from "./components/IsAnon";  
 import Adventures from './pages/Adventures';
-import Search from './components/Search';
+import FetchGames from './components/FetchGames';
 import CreateAdventure from './pages/CreateAdventure';
 import EditAdventure from './pages/EditAdventure';
 import AdventureDetails from './pages/AdventureDetails';
 import AddGameFromAPI from './components/AddGameFromAPI';
-import Game from "./components/Game";
+import GameCard from "./components/GameCard";
 
 
 
@@ -44,7 +44,7 @@ function App() {
 <Routes>
 <Route path='/' element={ <Homepage /> } />
 
-<Route path='/games' element={ <IsPrivate><Search/> <Game/> <AddGameFromAPI callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 
+<Route path='/games' element={ <IsPrivate><FetchGames/> <GameCard/> <AddGameFromAPI callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 
 
 
 <Route path='/adventures' element={ <IsPrivate><Adventures adventures={adventures} callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 

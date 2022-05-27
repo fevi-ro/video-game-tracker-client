@@ -33,7 +33,7 @@ function CreateAdventure(props) {
   const [personalRating, setPersonalRating] = useState(0);
 
   const [errorMessage, setErrorMessage] = useState("");
-  const { user } = useContext(AuthContext);
+
 
   const navigate = useNavigate();
 
