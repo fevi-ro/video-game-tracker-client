@@ -74,7 +74,7 @@ function CreateAdventure(props) {
 
 
 
-        // props.callbackUpdateList();
+        props.callbackUpdateList();
         navigate("/adventures");
       })
       .catch((error) => {
@@ -91,11 +91,13 @@ function CreateAdventure(props) {
         <label>Game Title</label>
         <input
           type="text"
+       
           value={name}
           required={true}
           onChange={(e) => {
             setName(e.target.value);
           }}
+          
         />
         <label>Image</label>
         <input
@@ -112,7 +114,7 @@ function CreateAdventure(props) {
                         id="date"
                         name="date"
                         value={date}
-                        required={false}
+                   
                         onChange={(e) => setDate(e.target.value)}
                     />
                </label>
@@ -124,7 +126,7 @@ function CreateAdventure(props) {
                         id="platforms"
                         value={platforms}
                         placeholder="Playstation, SNES, etc."
-                        required={false}
+                    
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
                 </label>
@@ -158,6 +160,7 @@ function CreateAdventure(props) {
         <input
           type="textarea"
           value={notes}
+          required={true}
           onChange={(e) => {
             setNotes(e.target.value);
           }}

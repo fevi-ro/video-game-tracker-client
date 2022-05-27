@@ -47,6 +47,7 @@ function LoginPage(props) {
           type="email"
           name="email"
           value={email}
+          required={true}
           onChange={(e) => setEmail(e.target.value)}
         />
  

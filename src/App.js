@@ -21,12 +21,10 @@ import Game from "./components/Game";
 function App() {
   
   const [adventures, setAdventures] = useState([]);
- // const [games, setGames] = useState([])
  console.log(adventures)
   const storedToken = localStorage.getItem("authToken");
   useEffect(() => {
     fetchAdventures();
-  //  fetchGames();
   }, []);
 
   const fetchAdventures = () => {
@@ -38,16 +36,6 @@ function App() {
       .catch(e => console.log("error getting adventures from API...", e))
   }
 
-
- /* const fetchGames = () => {
-    axios.post(`${process.env.REACT_APP_URL}/games`,
-    { headers: { Authorization: `Bearer ${storedToken}` } })
-      .then(response => {
-        setAdventures(response.data);
-      })
-      .catch(e => console.log("error getting adventures from API...", e))
-  }
- */
     
 
   return (
@@ -58,8 +46,6 @@ function App() {
 
 <Route path='/games' element={ <IsPrivate><Search/> <Game/> <AddGameFromAPI callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 
 
-{/* 
- <Route path='/add-adventure/:advid'element={ <IsPrivate><AddGameFromAPI adventures={adventures} callbackUpdateList={fetchAdventures}/> </IsPrivate>} />    */}
 
 <Route path='/adventures' element={ <IsPrivate><Adventures adventures={adventures} callbackUpdateList={fetchAdventures}/> </IsPrivate>} /> 
 

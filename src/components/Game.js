@@ -9,9 +9,6 @@ const Game = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     
 
-    // if (props.searched) {
- 
-    // }
 
     return (
 
