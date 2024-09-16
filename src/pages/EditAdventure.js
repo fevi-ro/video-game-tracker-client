@@ -60,7 +60,7 @@ function EditAdventure(props) {
             <h1>Edit</h1>
 
             <form onSubmit={handleSubmit}>
-            <label for="name">
+            <label htmlFor="name">
                 Game Title
                     <input
                         type="text"
@@ -71,7 +71,7 @@ function EditAdventure(props) {
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                <label for="image">
+                <label htmlFor="image">
                 Image
                     <input
                         type="text"
@@ -82,7 +82,7 @@ function EditAdventure(props) {
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <label for="date"> 
+                <label htmlFor="date"> 
                 Date Played
                     <input
                         type="date"
@@ -93,7 +93,7 @@ function EditAdventure(props) {
                         onChange={(e) => setDate(e.target.value)}
                     />
                </label>
-               <label for="platforms">
+               <label htmlFor="platforms">
                 Platforms
                     <input
                         type="text"
@@ -105,7 +105,7 @@ function EditAdventure(props) {
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
                 </label>
-                <label for="notes">
+                <label htmlFor="notes">
                 Notes
                     <input
                         type="text"

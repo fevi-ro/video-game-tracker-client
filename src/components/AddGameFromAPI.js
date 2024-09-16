@@ -110,7 +110,7 @@ console.log(adventure);
             <h1>Add Game</h1>
          
             <form onSubmit={createNewAdventure}>
-                <label for="name">
+                <label htmlFor="name">
                     Game Title
                     <input
                         type="text"
@@ -121,7 +121,7 @@ console.log(adventure);
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                <label for="image">
+                <label htmlFor="image">
                 Image
                     <input
                         type="text"
@@ -132,7 +132,7 @@ console.log(adventure);
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <label for="date"> 
+                <label htmlFor="date"> 
                 Date Played
                     <input
                         type="date"
@@ -143,7 +143,7 @@ console.log(adventure);
                         onChange={(e) => setDate(e.target.value)}
                     />
                </label>
-                <label for="platforms">
+                <label htmlFor="platforms">
                 Platforms
                     <input
                         type="text"
@@ -155,7 +155,7 @@ console.log(adventure);
                         onChange={(e) => setPlatforms(e.target.value)}
                     />
                 </label>
-                <label for="notes">
+                <label htmlFor="notes">
                 Notes
                     <input
                         type="text"

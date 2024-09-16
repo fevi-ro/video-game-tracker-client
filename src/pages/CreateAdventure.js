@@ -107,7 +107,7 @@ function CreateAdventure(props) {
             setImage(e.target.value);
           }}
         ></input>
-         <label for="date"> 
+         <label htmlFor="date"> 
                 Date Played
                     <input
                         type="date"
@@ -118,7 +118,7 @@ function CreateAdventure(props) {
                         onChange={(e) => setDate(e.target.value)}
                     />
                </label>
-           <label for="platforms">
+           <label htmlFor="platforms">
                 Platforms
                     <input
                         type="text"
