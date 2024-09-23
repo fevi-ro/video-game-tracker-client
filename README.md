@@ -12,10 +12,10 @@ https://github.com/fevi-ro/Video-game-tracker-server
 
 MongoDB, Express.js, React.js, Axios, Node.js, REST APIs, CSS
 
-Deployed on Netlify
+Deployed to Render
 
 
 
 :unicorn: **Project Link**
 
-https://videogame-tracker.netlify.app/
+https://video-game-tracker-lf9h.onrender.com/
